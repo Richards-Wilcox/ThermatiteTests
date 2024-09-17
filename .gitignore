@@ -1,5 +1,5 @@
 .env
-\.vscode
+.vscode
 /training/target/
 /experiments/target/
 /experiments/test
