@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "vscjava.vscode-java-pack",
+        "graphql.vscode-graphql",
+        "eamodio.gitlens",
+        "k--kato.intellij-idea-keybindings",
+        "ms-mssql.mssql",
+        "codezombiech.gitignore"
+    ]
+}

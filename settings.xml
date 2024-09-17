@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd">
+	<!--<localRepository>D:/maven/repository</localRepository>-->
+	<servers>
+		<server>
+			<id>configureone-maven-unreleased</id>
+			<username>rwdoors-maven-releases</username>
+			<password>ex8ZI15KmDtO1s880EGFNS</password>
+		</server>
+	</servers>
+
+	<profiles>
+		<profile>
+			<id>configureone-maven-unreleased</id>
+			<activation>
+			<activeByDefault>true</activeByDefault>
+			</activation>
+			<repositories>
+			<repository>
+				<id>configureone-maven-unreleased</id>
+				<url>https://nexus.configureonedemo.com/repository/configureone-maven-unreleased/</url>
+			</repository>
+			</repositories>
+		</profile>
+	</profiles>
+
+	<activeProfiles>
+		<activeProfile>configureone-maven-unreleased</activeProfile>
+	</activeProfiles>
+</settings>
