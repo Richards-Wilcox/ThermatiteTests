@@ -127,9 +127,9 @@ public class EasyWeb {
             e.printStackTrace();
         }
     }
-    public static void setDimensions(String model, int widthFeet, int widthInches, int heightFeet, int heightInches, WebDriver driver) {
+    public static void setDimensions(String model,String modelValue, int widthFeet, int widthInches, int heightFeet, int heightInches, WebDriver driver) {
         navigateToPage(driver, "Door Model and Dimensions");
-        setDropdown(By.id("DOOR_MODEL"), model, driver);
+        setDropdown(By.id("DOOR_MODEL"),modelValue, model, driver);
         setDropdown(By.id("DOOR_WIDTH_FT"), "" + widthFeet, driver);
        setDropdown(By.id("DOOR_WIDTH_IN"), "" + widthInches, driver);
        setDropdown(By.id("DOOR_HEIGHT_FT"), "" + heightFeet, driver);
