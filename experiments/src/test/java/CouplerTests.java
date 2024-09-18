@@ -1,6 +1,7 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
@@ -26,7 +27,7 @@ public class CouplerTests {
         EasyWeb.loadNewThermatiteConfig(driver);
         EasyWeb.setDimensions( 8,0, 8,0, driver);
         EasyWeb.navigateToPage(driver, "Torsion Assembly");
-        EasyWeb.setField(By.id("SHAFT"), "Tube Shaft","T", driver);
+        EasyWeb.setDropdown(By.id("SHAFT"), "Tube Shaft","T", driver);
         String couplerValue = driver.findElement(By.id("COUPLER")).getAttribute("value");
         assertEquals(couplerValue, "No");
         int children = driver.findElement(By.id("COUPLER")).findElements(By.tagName("option")).size();
@@ -38,7 +39,7 @@ public class CouplerTests {
         EasyWeb.loadNewThermatiteConfig(driver);
         EasyWeb.setDimensions( 14,0, 14,0, driver);
         EasyWeb.navigateToPage(driver, "Torsion Assembly");
-        EasyWeb.setField(By.id("SHAFT"), "Keyed Tube Shaft","K", driver);
+        EasyWeb.setDropdown(By.id("SHAFT"), "Keyed Tube Shaft","K", driver);
         String couplerValue = driver.findElement(By.id("COUPLER")).getAttribute("value");
         assertEquals(couplerValue, "No");
         int children = driver.findElement(By.id("COUPLER")).findElements(By.tagName("option")).size();
@@ -50,7 +51,7 @@ public class CouplerTests {
         EasyWeb.loadNewThermatiteConfig(driver);
         EasyWeb.setDimensions( 8,0, 8,0, driver);
         EasyWeb.navigateToPage(driver, "Torsion Assembly");
-        EasyWeb.setField(By.id("SHAFT"), "1\" Solid Shaft","S", driver);
+        EasyWeb.setDropdown(By.id("SHAFT"), "1\" Solid Shaft","S", driver);
         int children = driver.findElement(By.id("COUPLER")).findElements(By.tagName("option")).size();
         assertEquals(children, 2);
     }
@@ -60,7 +61,7 @@ public class CouplerTests {
         EasyWeb.loadNewThermatiteConfig(driver);
         EasyWeb.setDimensions( 10,0, 10,0, driver);
         EasyWeb.navigateToPage(driver, "Torsion Assembly");
-        EasyWeb.setField(By.id("SHAFT"), "1 1/4\" Solid Shaft","A", driver);
+        EasyWeb.setDropdown(By.id("SHAFT"), "1 1/4\" Solid Shaft","A", driver);
         int children = driver.findElement(By.id("COUPLER")).findElements(By.tagName("option")).size();
         assertEquals(children, 2);
     }
@@ -72,7 +73,7 @@ public class CouplerTests {
         int widthInches = LIMIT%12;
         EasyWeb.setDimensions( widthFeet+1,widthInches, 8,0, driver);
         EasyWeb.navigateToPage(driver, "Torsion Assembly");
-        EasyWeb.setField(By.id("SHAFT"), "1\" Solid Shaft","S", driver);
+        EasyWeb.setDropdown(By.id("SHAFT"), "1\" Solid Shaft","S", driver);
         int children = driver.findElement(By.id("COUPLER")).findElements(By.tagName("option")).size();
         assertEquals(children, 1);
         String couplerValue = driver.findElement(By.id("COUPLER")).getAttribute("value");
@@ -86,7 +87,7 @@ public class CouplerTests {
         int widthInches = LIMIT%12;
         EasyWeb.setDimensions( widthFeet+1,widthInches, 8,0, driver);
         EasyWeb.navigateToPage(driver, "Torsion Assembly");
-        EasyWeb.setField(By.id("SHAFT"), "1 1/4\" Solid Shaft","A", driver);
+        EasyWeb.setDropdown(By.id("SHAFT"), "1 1/4\" Solid Shaft","A", driver);
         int children = driver.findElement(By.id("COUPLER")).findElements(By.tagName("option")).size();
         assertEquals(children, 1);
         String couplerValue = driver.findElement(By.id("COUPLER")).getAttribute("value");

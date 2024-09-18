@@ -14,23 +14,30 @@ import io.github.cdimascio.dotenv.Dotenv;
 public class EasyWeb {
     public static void main(String[] args) throws Exception{
        WebDriver driver = new EdgeDriver();
-       login(driver);
-       loadNewThermatiteConfig(driver);  
-       ((JavascriptExecutor)driver).executeScript("nextPage()");
-        navigateToBOM(driver);
-        String bom = driver.findElement(By.id("bom-output")).getText();
-      //  System.out.println(bom);
-        for(String str: bom.split("\\n")){
-            String[] str2 = str.trim().split(" ");
-            int length = str2.length;
-            if(length > 2){
-                System.out.println(str.trim());
-                System.out.println(str2[0] + " " + str2[length-2]);
-            }
-           
-        }
-        
-       driver.close();
+       EasyWeb.login(driver);
+       EasyWeb.loadNewThermatiteConfig(driver);
+       EasyWeb.navigateToPage(driver, "Door Model and Dimensions");
+       EasyWeb.setDropdown(By.id("DOOR_MODEL"), "T175", "D", driver);
+       EasyWeb.setDropdown(By.id("DOOR_WIDTH_FT"), "4", driver);
+       EasyWeb.setDropdown(By.id("DOOR_WIDTH_IN"), "0", driver);
+       EasyWeb.setDropdown(By.id("DOOR_HEIGHT_FT"), "22", driver);
+       EasyWeb.navigateToPage(driver, "Hardware Options");
+       EasyWeb.setDropdown(By.id("LIFT_TYPE"), "Standard Lift - Radius(16 inch/406mm)", "Std_Lift_16R", driver);
+       EasyWeb.navigateToPage(driver, "Springs");
+       WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+       wait.until(d -> driver.findElement(By.id("simple-confirm")).isDisplayed());
+       ((JavascriptExecutor) driver).executeScript("nextPage()");
+
+       while (driver.getCurrentUrl().equals("https://easywebdev.rwdoors.com/spr/Configuration/interface/edit")) {
+           if (EasyWeb.getCurrentPage(driver).equals("Springs")) {
+               wait.until(d -> driver.findElement(By.id("SPRINGS_ASS_COM_dataTable")).findElement(By.tagName("input"))
+                       .isDisplayed());
+           }
+           ((JavascriptExecutor) driver).executeScript("nextPage()");
+       }
+       wait.until(d -> driver.findElement(By.id("bom-output")).isDisplayed());
+       driver.manage().window().fullscreen();
+      // driver.close();
     }   
     public static boolean isOnBOM(String partNumber, WebDriver driver){
         String bom = driver.findElement(By.id("bom-output")).getText();
@@ -104,14 +111,14 @@ public class EasyWeb {
          WebElement cookies = driver.findElement(By.id("gdpr-accept-button"));
          cookies.click();
     }
-    public static void setField(By by, String keys, String value, WebDriver driver){
+    public static void setDropdown(By by, String keys, String value, WebDriver driver){
         WebElement field = driver.findElement(by);
         while(!field.getAttribute("value").equals(value))
             field.sendKeys(keys);
        sleep(500);
     }
-    public static void setField(By by, String keys,  WebDriver driver){
-        setField(by, keys,keys, driver);
+    public static void setDropdown(By by, String keys,  WebDriver driver){
+        setDropdown(by, keys,keys, driver);
     }
     static void sleep(int millis){
         try {
@@ -122,19 +129,19 @@ public class EasyWeb {
     }
     public static void setDimensions(String model, int widthFeet, int widthInches, int heightFeet, int heightInches, WebDriver driver) {
         navigateToPage(driver, "Door Model and Dimensions");
-        setField(By.id("DOOR_MODEL"), model, driver);
-        setField(By.id("DOOR_WIDTH_FT"), "" + widthFeet, driver);
-       setField(By.id("DOOR_WIDTH_IN"), "" + widthInches, driver);
-       setField(By.id("DOOR_HEIGHT_FT"), "" + heightFeet, driver);
-       setField(By.id("DOOR_HEIGHT_IN"), "" + heightInches, driver);
+        setDropdown(By.id("DOOR_MODEL"), model, driver);
+        setDropdown(By.id("DOOR_WIDTH_FT"), "" + widthFeet, driver);
+       setDropdown(By.id("DOOR_WIDTH_IN"), "" + widthInches, driver);
+       setDropdown(By.id("DOOR_HEIGHT_FT"), "" + heightFeet, driver);
+       setDropdown(By.id("DOOR_HEIGHT_IN"), "" + heightInches, driver);
 
     }
     public static void setDimensions(int widthFeet, int widthInches, int heightFeet, int heightInches, WebDriver driver) {
         navigateToPage(driver, "Door Model and Dimensions");
-        setField(By.id("DOOR_WIDTH_FT"), "" + widthFeet, driver);
-       setField(By.id("DOOR_WIDTH_IN"), "" + widthInches, driver);
-       setField(By.id("DOOR_HEIGHT_FT"), "" + heightFeet, driver);
-       setField(By.id("DOOR_HEIGHT_IN"), "" + heightInches, driver);
+        setDropdown(By.id("DOOR_WIDTH_FT"), "" + widthFeet, driver);
+       setDropdown(By.id("DOOR_WIDTH_IN"), "" + widthInches, driver);
+       setDropdown(By.id("DOOR_HEIGHT_FT"), "" + heightFeet, driver);
+       setDropdown(By.id("DOOR_HEIGHT_IN"), "" + heightInches, driver);
 
     }
 }

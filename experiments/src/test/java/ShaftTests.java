@@ -20,8 +20,8 @@ public class ShaftTests {
     void lowestWeightDefault(){
         EasyWeb.loadNewThermatiteConfig(driver);
         EasyWeb.navigateToPage(driver, "Door Model and Dimensions");
-        EasyWeb.setField(By.id("DOOR_WIDTH_FT"), "8", driver);
-        EasyWeb.setField(By.id("DOOR_HEIGHT_FT"), "8", driver);
+        EasyWeb.setDropdown(By.id("DOOR_WIDTH_FT"), "8", driver);
+        EasyWeb.setDropdown(By.id("DOOR_HEIGHT_FT"), "8", driver);
        
     
         EasyWeb.navigateToPage(driver, "Torsion Assembly");
@@ -33,8 +33,8 @@ public class ShaftTests {
     void mediumWeightOptions(){
         EasyWeb.loadNewThermatiteConfig(driver);
         EasyWeb.navigateToPage(driver, "Door Model and Dimensions");
-        EasyWeb.setField(By.id("DOOR_WIDTH_FT"), "14", driver);
-        EasyWeb.setField(By.id("DOOR_HEIGHT_FT"), "14", driver);
+        EasyWeb.setDropdown(By.id("DOOR_WIDTH_FT"), "14", driver);
+        EasyWeb.setDropdown(By.id("DOOR_HEIGHT_FT"), "14", driver);
         EasyWeb.navigateToPage(driver, "Torsion Assembly");
         assertEquals(driver.findElement(By.id("SHAFT")).getAttribute("value"), "K");
         assertEquals(driver.findElement(By.id("SHAFT")).findElements(By.tagName("option")).size(), 3);
@@ -45,8 +45,8 @@ public class ShaftTests {
     void heavyLessThanOneThousand(){
         EasyWeb.loadNewThermatiteConfig(driver);
         EasyWeb.navigateToPage(driver, "Door Model and Dimensions");
-        EasyWeb.setField(By.id("DOOR_WIDTH_FT"), "18", driver);
-        EasyWeb.setField(By.id("DOOR_HEIGHT_FT"), "18", driver);
+        EasyWeb.setDropdown(By.id("DOOR_WIDTH_FT"), "18", driver);
+        EasyWeb.setDropdown(By.id("DOOR_HEIGHT_FT"), "18", driver);
         EasyWeb.navigateToPage(driver, "Torsion Assembly");
         assertEquals(driver.findElement(By.id("SHAFT")).getAttribute("value"), "S");
         assertEquals(driver.findElement(By.id("SHAFT")).findElements(By.tagName("option")).size(), 2);
@@ -56,8 +56,8 @@ public class ShaftTests {
     void heavyGreaterThanOneThousand(){
         EasyWeb.loadNewThermatiteConfig(driver);
         EasyWeb.navigateToPage(driver, "Door Model and Dimensions");
-        EasyWeb.setField(By.id("DOOR_WIDTH_FT"), "20", driver);
-        EasyWeb.setField(By.id("DOOR_HEIGHT_FT"), "18", driver);
+        EasyWeb.setDropdown(By.id("DOOR_WIDTH_FT"), "20", driver);
+        EasyWeb.setDropdown(By.id("DOOR_HEIGHT_FT"), "18", driver);
         EasyWeb.navigateToPage(driver, "Torsion Assembly");
         assertEquals(driver.findElement(By.id("SHAFT")).getAttribute("value"), "A");
         assertEquals(driver.findElement(By.id("SHAFT")).findElements(By.tagName("option")).size(), 1);
