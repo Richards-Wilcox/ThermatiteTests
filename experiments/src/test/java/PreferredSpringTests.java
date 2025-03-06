@@ -29,9 +29,9 @@ public class PreferredSpringTests {
     void generatesProperSpringT1(){
         EasyWeb.loadNewThermatiteConfig(driver);
         EasyWeb.navigateToPage(driver, "Door Model and Dimensions");
-        EasyWeb.setField(By.id("DOOR_MODEL"), "T175", "D", driver);
-        EasyWeb.setField(By.id("DOOR_WIDTH_FT"), "14", driver);
-        EasyWeb.setField(By.id("DOOR_HEIGHT_FT"), "14", driver);
+        EasyWeb.setDropdown(By.id("DOOR_MODEL"), "T175", "D", driver);
+        EasyWeb.setDropdown(By.id("DOOR_WIDTH_FT"), "14", driver);
+        EasyWeb.setDropdown(By.id("DOOR_HEIGHT_FT"), "14", driver);
         EasyWeb.navigateToPage(driver, "Springs");
        sleep(2000);
         assertEquals(driver.findElement(By.id("SPRINGS_ASS_COM")).getAttribute("value"), "433-6106Q2");
@@ -41,18 +41,18 @@ public class PreferredSpringTests {
     void generatesProperSpringT2(){
         EasyWeb.loadNewThermatiteConfig(driver);
         EasyWeb.navigateToPage(driver, "Door Model and Dimensions");
-        EasyWeb.setField(By.id("DOOR_MODEL"), "T175", "D", driver);
-        EasyWeb.setField(By.id("DOOR_WIDTH_FT"), "14", driver);
-        EasyWeb.setField(By.id("DOOR_HEIGHT_FT"), "14", driver);
+        EasyWeb.setDropdown(By.id("DOOR_MODEL"), "T175", "D", driver);
+        EasyWeb.setDropdown(By.id("DOOR_WIDTH_FT"), "14", driver);
+        EasyWeb.setDropdown(By.id("DOOR_HEIGHT_FT"), "14", driver);
         
 
         EasyWeb.navigateToPage(driver, "Hardware Options");
-        EasyWeb.setField(By.id("LIFT_TYPE"), "High_Lift", driver);
-        EasyWeb.setField(By.id("HI_LFT_INPUT"), "30", driver);
+        EasyWeb.setDropdown(By.id("LIFT_TYPE"), "High_Lift", driver);
+        EasyWeb.setDropdown(By.id("HI_LFT_INPUT"), "30", driver);
 
 
         EasyWeb.navigateToPage(driver, "Torsion Assembly");
-        EasyWeb.setField(By.id("SHAFT"), "1 1/4\" Solid Shaft", "A", driver);
+        EasyWeb.setDropdown(By.id("SHAFT"), "1 1/4\" Solid Shaft", "A", driver);
         //The Springs page often takes a long time to load, this is just a way to make sure we get there. 
         try{
             EasyWeb.navigateToPage(driver, "Springs");
@@ -70,13 +70,13 @@ public class PreferredSpringTests {
     void generatesProperSpringT3(){
         EasyWeb.loadNewThermatiteConfig(driver);
         EasyWeb.navigateToPage(driver, "Door Model and Dimensions");
-        EasyWeb.setField(By.id("DOOR_MODEL"), "T175", "D", driver);
-        EasyWeb.setField(By.id("DOOR_WIDTH_FT"), "14", driver);
-        EasyWeb.setField(By.id("DOOR_HEIGHT_FT"), "14", driver);
+        EasyWeb.setDropdown(By.id("DOOR_MODEL"), "T175", "D", driver);
+        EasyWeb.setDropdown(By.id("DOOR_WIDTH_FT"), "14", driver);
+        EasyWeb.setDropdown(By.id("DOOR_HEIGHT_FT"), "14", driver);
         
 
         EasyWeb.navigateToPage(driver, "Hardware Options");
-        EasyWeb.setField(By.id("LIFT_TYPE"), "Vertical Lift", "VL", driver);
+        EasyWeb.setDropdown(By.id("LIFT_TYPE"), "Vertical Lift", "VL", driver);
 
         //The Springs page often takes a long time to load, this is just a way to make sure we get there. 
         try{

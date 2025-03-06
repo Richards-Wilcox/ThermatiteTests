@@ -29,10 +29,10 @@ public class DefaultSpringQTYTests {
     void t150SingleTest(){
         EasyWeb.loadNewThermatiteConfig(driver);
         EasyWeb.navigateToPage(driver, "Door Model and Dimensions");
-       EasyWeb.setField(By.id("DOOR_WIDTH_FT"), "8", driver);
-       EasyWeb.setField(By.id("DOOR_WIDTH_IN"), "0", driver);
-       EasyWeb.setField(By.id("DOOR_HEIGHT_FT"), "8", driver);
-       EasyWeb.setField(By.id("DOOR_HEIGHT_IN"), "0", driver);
+       EasyWeb.setDropdown(By.id("DOOR_WIDTH_FT"), "8", driver);
+       EasyWeb.setDropdown(By.id("DOOR_WIDTH_IN"), "0", driver);
+       EasyWeb.setDropdown(By.id("DOOR_HEIGHT_FT"), "8", driver);
+       EasyWeb.setDropdown(By.id("DOOR_HEIGHT_IN"), "0", driver);
 
 
         EasyWeb.navigateToPage(driver, "Springs");
@@ -45,10 +45,10 @@ public class DefaultSpringQTYTests {
         EasyWeb.loadNewThermatiteConfig(driver);
         EasyWeb.navigateToPage(driver, "Door Model and Dimensions");
         
-        EasyWeb.setField(By.id("DOOR_WIDTH_FT"), "12", driver);
-        EasyWeb.setField(By.id("DOOR_WIDTH_IN"), "0", driver);
-        EasyWeb.setField(By.id("DOOR_HEIGHT_FT"), "10", driver);
-        EasyWeb.setField(By.id("DOOR_HEIGHT_IN"), "0", driver);
+        EasyWeb.setDropdown(By.id("DOOR_WIDTH_FT"), "12", driver);
+        EasyWeb.setDropdown(By.id("DOOR_WIDTH_IN"), "0", driver);
+        EasyWeb.setDropdown(By.id("DOOR_HEIGHT_FT"), "10", driver);
+        EasyWeb.setDropdown(By.id("DOOR_HEIGHT_IN"), "0", driver);
 
         EasyWeb.navigateToPage(driver, "Springs");
         sleep(2000);
@@ -61,10 +61,10 @@ public class DefaultSpringQTYTests {
         EasyWeb.loadNewThermatiteConfig(driver);
         EasyWeb.navigateToPage(driver, "Door Model and Dimensions");
        
-        EasyWeb.setField(By.id("DOOR_WIDTH_FT"), "18", driver);
-        EasyWeb.setField(By.id("DOOR_WIDTH_IN"), "0", driver);
-        EasyWeb.setField(By.id("DOOR_HEIGHT_FT"), "12", driver);
-        EasyWeb.setField(By.id("DOOR_HEIGHT_IN"), "0", driver);
+        EasyWeb.setDropdown(By.id("DOOR_WIDTH_FT"), "18", driver);
+        EasyWeb.setDropdown(By.id("DOOR_WIDTH_IN"), "0", driver);
+        EasyWeb.setDropdown(By.id("DOOR_HEIGHT_FT"), "12", driver);
+        EasyWeb.setDropdown(By.id("DOOR_HEIGHT_IN"), "0", driver);
 
         EasyWeb.navigateToPage(driver, "Springs");
         sleep(2000);
@@ -76,11 +76,11 @@ public class DefaultSpringQTYTests {
     void t175DoubleTest(){
         EasyWeb.loadNewThermatiteConfig(driver);
         EasyWeb.navigateToPage(driver, "Door Model and Dimensions");
-        EasyWeb.setField(By.id("DOOR_MODEL"), "T175", "D", driver);
-        EasyWeb.setField(By.id("DOOR_WIDTH_FT"), "8", driver);
-        EasyWeb.setField(By.id("DOOR_WIDTH_IN"), "0", driver);
-        EasyWeb.setField(By.id("DOOR_HEIGHT_FT"), "10", driver);
-        EasyWeb.setField(By.id("DOOR_HEIGHT_IN"), "0", driver);
+        EasyWeb.setDropdown(By.id("DOOR_MODEL"), "T175", "D", driver);
+        EasyWeb.setDropdown(By.id("DOOR_WIDTH_FT"), "8", driver);
+        EasyWeb.setDropdown(By.id("DOOR_WIDTH_IN"), "0", driver);
+        EasyWeb.setDropdown(By.id("DOOR_HEIGHT_FT"), "10", driver);
+        EasyWeb.setDropdown(By.id("DOOR_HEIGHT_IN"), "0", driver);
 
         EasyWeb.navigateToPage(driver, "Springs");
         sleep(2000);
@@ -92,11 +92,11 @@ public class DefaultSpringQTYTests {
     void t175QuadTest(){
         EasyWeb.loadNewThermatiteConfig(driver);
         EasyWeb.navigateToPage(driver, "Door Model and Dimensions");
-        EasyWeb.setField(By.id("DOOR_MODEL"), "T175", "D", driver);
-        EasyWeb.setField(By.id("DOOR_WIDTH_FT"), "18", driver);
-        EasyWeb.setField(By.id("DOOR_WIDTH_IN"), "0", driver);
-        EasyWeb.setField(By.id("DOOR_HEIGHT_FT"), "14", driver);
-        EasyWeb.setField(By.id("DOOR_HEIGHT_IN"), "0", driver);
+        EasyWeb.setDropdown(By.id("DOOR_MODEL"), "T175", "D", driver);
+        EasyWeb.setDropdown(By.id("DOOR_WIDTH_FT"), "18", driver);
+        EasyWeb.setDropdown(By.id("DOOR_WIDTH_IN"), "0", driver);
+        EasyWeb.setDropdown(By.id("DOOR_HEIGHT_FT"), "14", driver);
+        EasyWeb.setDropdown(By.id("DOOR_HEIGHT_IN"), "0", driver);
 
 
         EasyWeb.navigateToPage(driver, "Springs");
@@ -109,11 +109,11 @@ public class DefaultSpringQTYTests {
     void t175SexTest(){
         EasyWeb.loadNewThermatiteConfig(driver);
         EasyWeb.navigateToPage(driver, "Door Model and Dimensions");
-        EasyWeb.setField(By.id("DOOR_MODEL"), "T175", "D", driver);
-        EasyWeb.setField(By.id("DOOR_WIDTH_FT"), "30", driver);
-        EasyWeb.setField(By.id("DOOR_WIDTH_IN"), "0", driver);
-        EasyWeb.setField(By.id("DOOR_HEIGHT_FT"), "18", driver);
-        EasyWeb.setField(By.id("DOOR_HEIGHT_IN"), "0", driver);
+        EasyWeb.setDropdown(By.id("DOOR_MODEL"), "T175", "D", driver);
+        EasyWeb.setDropdown(By.id("DOOR_WIDTH_FT"), "30", driver);
+        EasyWeb.setDropdown(By.id("DOOR_WIDTH_IN"), "0", driver);
+        EasyWeb.setDropdown(By.id("DOOR_HEIGHT_FT"), "18", driver);
+        EasyWeb.setDropdown(By.id("DOOR_HEIGHT_IN"), "0", driver);
 
 
         EasyWeb.navigateToPage(driver, "Springs");
